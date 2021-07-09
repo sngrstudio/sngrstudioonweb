@@ -4,7 +4,7 @@
     const height = 1080
     const urlPrefix = 'https://res.cloudinary.com/radenpioneer/video/upload/'
     const formats = ['webm', 'mp4', 'ogv']
-    const urlFull = `${urlPrefix}/w_${width},h_${height},c_fit/${src}`
+    const urlFull = `${urlPrefix}w_${width},h_${height},c_fit/f_auto/${src}`
 </script>
 
 <style lang="scss">
