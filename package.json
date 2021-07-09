@@ -1,0 +1,14 @@
+{
+  "name": "@example/starter",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "astro dev",
+    "build": "astro build"
+  },
+  "devDependencies": {
+    "@astrojs/renderer-svelte": "^0.1.1",
+    "astro": "^0.17.0",
+    "tailwindcss": "^2.2.4"
+  }
+}
