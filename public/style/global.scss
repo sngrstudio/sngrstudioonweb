@@ -1,0 +1,10 @@
+@use './tailwind';
+@use './fonts';
+
+body {
+    @apply flex flex-col min-h-screen;
+}
+
+main {
+    @apply flex-grow;
+}

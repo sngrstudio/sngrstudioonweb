@@ -1,0 +1,19 @@
+---
+import Base from './base.astro'
+import Footer from '../components/footer.svelte'
+
+const siteName = 'Sastronegoro Studio'
+
+export interface Props {
+    title: string
+}
+
+const {title} = Astro.props
+---
+
+<Base title={title !== undefined ? `${title} | ${siteName}` : siteName}>
+    <main>
+        <slot/>
+    </main>
+    <Footer/>
+</Base>
