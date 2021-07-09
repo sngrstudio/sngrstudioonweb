@@ -21,3 +21,5 @@ yarn-error.log*
 # lockfiles
 package-lock.json
 yarn.lock
+# Local Netlify folder
+.netlify
