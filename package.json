@@ -8,8 +8,10 @@
   },
   "devDependencies": {
     "@astrojs/renderer-svelte": "^0.1.1",
+    "@icons-pack/svelte-simple-icons": "^2.2.0",
     "@tailwindcss/typography": "^0.4.1",
     "astro": "^0.17.0",
+    "node-fetch": "^2.6.1",
     "tailwindcss": "^2.2.4"
   }
 }

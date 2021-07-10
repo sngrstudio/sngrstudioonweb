@@ -11,19 +11,12 @@
 
 <style lang="scss">
     footer {
-        @apply text-white text-center text-base p-4;
+        @apply text-white text-opacity-50 text-center p-4;
         z-index: 2;
     }
 
 </style>
 
-<footer>
-    <p>
-        &copy;
-        <a href="/" target="_blank" rel="noreferrer">Sastronegoro</a> 2021. 
-        Built with 
-        <a href={astro.href} target="_blank" rel="noreferrer">{astro.title}</a> 
-        and 
-        <a href={svelte.href} target="_blank" rel="noreferrer">{svelte.title}</a>.
-    </p>
+<footer class="text-xs lg:text-base">
+    <p>&copy;<a href="/" target="_blank" rel="noreferrer">Sastronegoro</a> 2021. Built with <a href={astro.href} target="_blank" rel="noreferrer">{astro.title}</a> and <a href={svelte.href} target="_blank" rel="noreferrer">{svelte.title}</a>.</p>
 </footer>

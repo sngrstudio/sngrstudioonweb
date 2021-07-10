@@ -1,6 +1,8 @@
 [dev]
+    framework = "#custom"
     command = "npx pnpm start"
     autoLaunch = false
+    targetPort = 3000
 
 [build.environment]
     NODE_VERSION = "14.17.1"

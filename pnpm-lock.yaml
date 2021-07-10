@@ -2,14 +2,18 @@ lockfileVersion: 5.3
 
 specifiers:
   '@astrojs/renderer-svelte': ^0.1.1
+  '@icons-pack/svelte-simple-icons': ^2.2.0
   '@tailwindcss/typography': ^0.4.1
   astro: ^0.17.0
+  node-fetch: ^2.6.1
   tailwindcss: ^2.2.4
 
 devDependencies:
   '@astrojs/renderer-svelte': 0.1.1
+  '@icons-pack/svelte-simple-icons': 2.2.0
   '@tailwindcss/typography': 0.4.1_tailwindcss@2.2.4
   astro: 0.17.0
+  node-fetch: 2.6.1
   tailwindcss: 2.2.4
 
 packages:
@@ -216,6 +220,12 @@ packages:
       postcss: ^8.0.0
     dependencies:
       purgecss: 4.0.3
+    dev: true
+
+  /@icons-pack/svelte-simple-icons/2.2.0:
+    resolution: {integrity: sha512-XBsF9VZnfRilgkUFh+meU3QUOOEX2rj5ISjIGNJy3PIvHLjUym2EJSVfeQuVZLOPJnjkMP4/+dVZZ3qAvKmLIw==}
+    dependencies:
+      svelte: 3.38.3
     dev: true
 
   /@nodelib/fs.scandir/2.1.5:
@@ -452,6 +462,10 @@ packages:
     resolution: {integrity: sha512-OydMCocGMGqw/1BnWbhtK+AtwyWTOigtrQlRe57OQmTNcI3HKlVI5FGlh+c4mSqInMPLynFrTlYjfajPu9O/eQ==}
     dev: true
 
+  /@types/node/16.3.1:
+    resolution: {integrity: sha512-N87VuQi7HEeRJkhzovao/JviiqKjDKMVKxKMfUvSKw+MbkbW8R0nA3fi/MQhhlxV2fQ+2ReM+/Nt4efdrJx3zA==}
+    dev: true
+
   /@types/parse-json/4.0.0:
     resolution: {integrity: sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==}
     dev: true
@@ -463,7 +477,7 @@ packages:
   /@types/sass/1.16.1:
     resolution: {integrity: sha512-iZUcRrGuz/Tbg3loODpW7vrQJkUtpY2fFSf4ELqqkApcS2TkZ1msk7ie8iZPB86lDOP8QOTTmuvWjc5S0R9OjQ==}
     dependencies:
-      '@types/node': 16.3.0
+      '@types/node': 16.3.1
     dev: true
 
   /@types/unist/2.0.5:

@@ -1,6 +1,7 @@
 ---
 import Base from './base.astro'
 import Footer from '../components/footer.svelte'
+import Header from '../components/header.svelte'
 
 const siteName = 'Sastronegoro Studio'
 
@@ -12,6 +13,7 @@ const {title} = Astro.props
 ---
 
 <Base title={title !== undefined ? `${title} | ${siteName}` : siteName}>
+    <Header/>
     <main>
         <slot/>
     </main>
