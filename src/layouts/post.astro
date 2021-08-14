@@ -6,8 +6,12 @@ const { content } = Astro.props
 ---
 <MainLayout title={content.title}>
     <article class="post">
-        <h1>{content.title}</h1>
-        <p class="meta"><time datetime={content.date}>{DateTime.fromISO(content.date).setLocale('id').toLocaleString(DateTime.DATE_FULL)}</time></p>
+        <h1 class="title">{content.title}</h1>
+        <p class="meta">
+            <time datetime={content.date}>{DateTime.fromISO(content.date).setLocale('id').toLocaleString(DateTime.DATE_FULL).toUpperCase()}</time>
+            <span>{' | '}</span>
+            {content.tags.map(tag => (<span><a href="#">{tag.toUpperCase()}</a><span>{' '}</span></span>))}
+        </p>
         <hr>
         <slot/>
         <p class="meta"><a href="/">BERANDA</a></p>
@@ -24,5 +28,8 @@ const { content } = Astro.props
         a {
             @apply no-underline text-current hover:underline transition-all;
         }
+    }
+    .title {
+        line-height: 1.25 !important;
     }
 </style>
