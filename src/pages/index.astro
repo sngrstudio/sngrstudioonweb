@@ -1,0 +1,24 @@
+---
+import MainLayout from '$layouts/main.astro'
+
+import TitleSection from '$components/title.astro'
+import NameCardSection from '$components/namecard.astro'
+import BioSection from '$components/bio.astro'
+import LatestWorkSection from '$components/latestwork.astro'
+---
+<MainLayout>
+    <section class="container">
+        <NameCardSection/>
+        <BioSection/>
+        <LatestWorkSection/>
+    </section>
+</MainLayout>
+
+<style lang="scss">
+    .container {
+        @apply max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-6 gap-4 lg:gap-8;
+        :global(section) {
+            @apply rounded-xl border border-gray-300 hover:border-white shadow hover:shadow-lg transition-all bg-white;
+        }
+    }
+</style>

@@ -1,0 +1,17 @@
+---
+const {title} = Astro.props || ''
+
+import BaseLayout from './base.astro'
+---
+
+<BaseLayout title={title ? `${title} | sastronegoro.dev` : 'sastronegoro.dev'}>
+    <main>
+        <slot/>
+    </main>
+</BaseLayout>
+
+<style lang='scss'>
+    main {
+        @apply flex-auto pt-16 lg:pt-24 px-4;
+    }
+</style>
