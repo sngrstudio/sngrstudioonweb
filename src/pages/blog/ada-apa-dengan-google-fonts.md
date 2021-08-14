@@ -15,3 +15,7 @@ Dan Google Fontsnya kaget dong 😂
 Kira-kira kenapa? Mungkin ada anak magang yang salah push bukannya ke development, malah ke production? Kasian deh itu anak magang, pasti udah digoblok2in itu sama seniornya...
 
 Pelajaran buat kita: _kalo mau bikin aplikasi, khususnya buat klien, testing dulu bosque..._ Google aja bisa salah apalagi kamu programmer kampung...
+
+#### Update:
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Thanks for letting us know! We&#39;ve unfurled the banner 😅</p>&mdash; Google Fonts (@googlefonts) <a href="https://twitter.com/googlefonts/status/1426580072568344580?ref_src=twsrc%5Etfw">August 14, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
