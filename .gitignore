@@ -18,8 +18,5 @@ yarn-error.log*
 # macOS-specific files
 .DS_Store
 
-# lockfiles
-package-lock.json
-yarn.lock
 # Local Netlify folder
 .netlify

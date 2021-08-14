@@ -1,13 +1,9 @@
 [dev]
     framework = "#custom"
-    command = "npx pnpm start"
+    command = "yarn start"
     autoLaunch = false
     targetPort = 3000
 
-[build.environment]
-    NODE_VERSION = "14.17.1"
-    NPM_FLAGS = "--prefix=/dev/null"
-
 [build]
-    command = "npx pnpm i --store=node_modules/.pnpm-store && npx pnpm run build"
+    command = "yarn build"
     publish = "dist"
