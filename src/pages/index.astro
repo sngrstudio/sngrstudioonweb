@@ -1,16 +1,16 @@
 ---
 import MainLayout from '$layouts/main.astro'
-
 import TitleSection from '$components/title.astro'
 import NameCardSection from '$components/namecard.astro'
 import BioSection from '$components/bio.astro'
 import LatestWorkSection from '$components/latestwork.astro'
+import BlogSection from '$components/blog.astro'
 ---
 <MainLayout>
     <section class="container">
         <NameCardSection/>
         <BioSection/>
-        <LatestWorkSection/>
+        <BlogSection/>
     </section>
 </MainLayout>
 
@@ -18,7 +18,7 @@ import LatestWorkSection from '$components/latestwork.astro'
     .container {
         @apply max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-6 gap-4 lg:gap-8;
         :global(section) {
-            @apply rounded-xl border border-gray-300 hover:border-white shadow hover:shadow-lg transition-all bg-white;
+            @apply rounded-xl border border-white shadow hover:shadow-lg transition-all bg-white p-16;
         }
     }
 </style>

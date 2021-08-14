@@ -1,0 +1,50 @@
+---
+const posts = Astro.fetchContent('../pages/blog/*.md').sort((a, b) => new Date(b.date) - new Date(a.date))
+import { DateTime } from 'luxon'
+---
+
+<section id="blog">
+    <h1 class="title">Blog Post</h1>
+    <div class="post_container">
+    {posts.map((post) => (
+        <a class="post" href={post.url}>
+            <h2>{post.title}</h2>
+            <p class="meta"><time datetime={post.date}>{DateTime.fromISO(post.date).setLocale('id').toLocaleString(DateTime.DATE_FULL)}</time></p>
+        </a>
+    ))}
+    </div>
+</section>
+
+<style lang="scss">
+    section {
+        @apply lg:col-span-6;
+    }
+
+    .title {
+        @apply font-bold text-xl lg:text-4xl mb-8;
+    }
+
+    .post_container {
+        @apply flex flex-row gap-4 overflow-x-scroll pb-8;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    .post {
+        @apply flex flex-col justify-start border p-8 w-72 h-72 rounded-xl hover:shadow-lg transition-all;
+        h2 {
+            @apply font-bold text-2xl line-clamp-3;
+        }
+        p {
+            @apply mt-auto
+        }
+    }
+
+    .meta {
+        font-family: 'Cascadia Code', sans-serif;
+        @apply text-gray-500;
+    }
+</style>

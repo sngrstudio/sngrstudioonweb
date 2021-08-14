@@ -7,12 +7,11 @@ const user = await response.json()
     <img src={user.avatar_url} alt={user.name} loading="lazy">
     <h2>{user.name}</h2>
     <p>{user.bio}</p>
-    <div class="links"></div>
 </section>
 
 <style lang="scss">
-    section {
-        @apply lg:col-span-2 p-8 flex flex-col items-center gap-4;
+    #namecard {
+        @apply lg:col-span-2 flex flex-col items-center gap-4;
         img {
             @apply w-40 h-40 rounded-full;
         }
@@ -20,7 +19,10 @@ const user = await response.json()
             @apply font-bold text-center text-4xl;
         }
         p {
-            @apply text-xl;
+            @apply text-xl text-center;
+        }
+        svg {
+            @apply fill-current text-gray-500 w-16 h-16;
         }
     }
 </style>

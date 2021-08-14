@@ -1,0 +1,28 @@
+---
+import MainLayout from '$layouts/main.astro'
+import { DateTime } from 'luxon'
+
+const { content } = Astro.props
+---
+<MainLayout title={content.title}>
+    <article class="post">
+        <h1>{content.title}</h1>
+        <p class="meta"><time datetime={content.date}>{DateTime.fromISO(content.date).setLocale('id').toLocaleString(DateTime.DATE_FULL)}</time></p>
+        <hr>
+        <slot/>
+        <p class="meta"><a href="/">BERANDA</a></p>
+    </article>
+</MainLayout>
+
+<style lang="scss">
+    .post {
+        @apply prose md:prose-lg lg:prose-2xl mx-auto bg-white shadow-xl p-16 rounded-3xl;
+    }
+    .meta {
+        font-family: 'Cascadia Code', sans-serif;
+        @apply text-gray-500;
+        a {
+            @apply no-underline text-current hover:underline transition-all;
+        }
+    }
+</style>
