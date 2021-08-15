@@ -1,0 +1,67 @@
+---
+import { DateTime } from 'luxon'
+export async function getStaticPaths() {
+    const posts = Astro.fetchContent('../blog/*.md')
+    return posts.map(post => {
+        return {
+            params: { slug: post.url.split('/')[2] },
+            props: { post }
+        }
+    })
+}
+
+const { slug } = Astro.request.params
+const { post } = Astro.props
+
+const escapeHTML = str =>
+  str.replace(
+    /[&<>'"]/g,
+    tag =>
+      ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        "'": '&#39;',
+        '"': '&quot;'
+      }[tag] || tag)
+  )
+---
+<html>
+<head>
+    <link rel="stylesheet" href="/style/global.css">
+</head>
+<body>
+    <section>
+        <article>
+            <p>{ post.url }</p>
+            <h1>{ post.title }</h1>
+            <hr>
+            <div class="excerpt">{ escapeHTML(post.astro.source) }</div>
+            <hr>
+            <p>{ DateTime.fromISO(post.date).setLocale('id').toLocaleString(DateTime.DATE_FULL).toUpperCase() } | { post.tags.join(', ').toUpperCase() }</p>
+        </article>
+    </section>
+</body>
+</html>
+
+
+<style lang="scss">
+    section {
+        width: 1200px;
+        height: 630px;
+        @apply bg-gray-100 grid place-content-center;
+    }
+    article {
+        @apply bg-white max-w-screen-md p-8 shadow-2xl rounded-2xl;
+        h1 {
+            @apply font-extrabold text-5xl line-clamp-2 leading-tight mb-4 mt-4;
+        }
+        p {
+            font-family: 'Cascadia Code', sans-serif;
+            @apply text-xl text-gray-500 mt-4;
+        }
+    }
+    .excerpt {
+        @apply line-clamp-3 text-2xl my-4;
+    }
+</style>

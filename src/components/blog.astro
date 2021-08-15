@@ -1,5 +1,5 @@
 ---
-const posts = Astro.fetchContent('../pages/blog/*.md').sort((a, b) => new Date(b.date) - new Date(a.date))
+const posts = Astro.fetchContent('../pages/blog/*.md').sort((a, b) => new Date(b.date) - new Date(a.date)).slice(0, 10)
 import { DateTime } from 'luxon'
 ---
 
