@@ -13,18 +13,6 @@ export async function getStaticPaths() {
 const { slug } = Astro.request.params
 const { post } = Astro.props
 
-const escapeHTML = str =>
-  str.replace(
-    /[&<>'"]/g,
-    tag =>
-      ({
-        '&': '&amp;',
-        '<': '&lt;',
-        '>': '&gt;',
-        "'": '&#39;',
-        '"': '&quot;'
-      }[tag] || tag)
-  )
 ---
 <html>
 <head>
@@ -33,10 +21,8 @@ const escapeHTML = str =>
 <body>
     <section>
         <article>
-            <p>{ post.url }</p>
+            <p>sngr.dev</p>
             <h1>{ post.title }</h1>
-            <hr>
-            <div class="excerpt">{ escapeHTML(post.astro.source) }</div>
             <hr>
             <p>{ DateTime.fromISO(post.date).setLocale('id').toLocaleString(DateTime.DATE_FULL).toUpperCase() } | { post.tags.join(', ').toUpperCase() }</p>
         </article>
@@ -54,7 +40,7 @@ const escapeHTML = str =>
     article {
         @apply bg-white max-w-screen-md p-8 shadow-2xl rounded-2xl;
         h1 {
-            @apply font-extrabold text-5xl line-clamp-2 leading-tight mb-4 mt-4;
+            @apply font-extrabold text-5xl line-clamp-3 leading-tight mb-4 mt-4;
         }
         p {
             font-family: 'Cascadia Code', sans-serif;
