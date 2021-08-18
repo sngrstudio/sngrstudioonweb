@@ -4,7 +4,7 @@ title: Beranda
 video: 'sasdev/video_f5jd1y'
 ---
 
-# sastronegoro.dev
+# sngr.dev
 
 Selamat datang, dan terima kasih telah berkunjung ke website [sastronegoro.dev](/). Namun sayang sekali, website ini masih dalam tahap pengembangan :(
 

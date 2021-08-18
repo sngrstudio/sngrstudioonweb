@@ -11,3 +11,9 @@
 [build]
     command = "npx pnpm i --store=node_modules/.pnpm-store && npx pnpm run build"
     publish = "dist"
+
+[[redirects]]
+    from = "https://sastronegoro-dev.netlify.app/"
+    to = "https://sngr.dev/"
+    status = 301
+    force = true
