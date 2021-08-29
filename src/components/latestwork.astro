@@ -31,7 +31,7 @@ const works = [
         {works.map((work) => {
             const screenshot = `${SCREENSHOT_SERVICE_URL}/${encodeURIComponent(work.url)}/opengraph/`
             return (
-                <a class="work" href={work.url}>
+                <a class="work" href={work.url} target="_blank">
                     <Image src={screenshot} alt={work.title} width={509} height={267} client:visible />
                     <h2 class="work_title">{work.title}</h2>
                     <p>{work.status.toUpperCase()}</p>
