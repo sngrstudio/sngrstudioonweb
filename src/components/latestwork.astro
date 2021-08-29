@@ -3,26 +3,38 @@ import Image from './image.tsx'
 
 const SCREENSHOT_SERVICE_URL = 'https://ss.sngr.dev'
 const GITHUB_URL = 'https://github.com' 
-const works = [
+const allWorks = [
     {
-        title: 'This Portfolio Website',
-        url: 'https://dev.sngr.dev',
+        title: 'Portfolio Website (this website)',
+        url: 'https://sngr.dev',
         repo: 'sastronegorodev/sastronegoro.dev',
-        status: 'ongoing'
+        status: 'ongoing',
+        firstCommit: '2021-07-09'
     },
     {
         title: 'DM3 KAMMI Kalsel-Kalteng',
         url: 'https://dev--dm3kalselteng2021.netlify.app',
         repo: 'radenpioneer/dm3kalselteng2021',
-        status: 'ongoing'
+        status: 'ongoing',
+        firstCommit: '2021-08-21'
     },
     {
         title: 'DPC PKS MB Ketapang',
         url: 'https://pksmbketapang.org',
         repo: 'sastronegorodev/pksmbketapang',
-        status: 'ongoing'
+        status: 'ongoing',
+        firstCommit: '2021-07-16'
+    },
+    {
+        title: 'Personal Blog',
+        url: 'https://radenpioneer.netlify.app',
+        repo: 'radenpioneer/blog',
+        status: 'finished',
+        firstCommit: '2020-05-29'
     }
 ]
+
+const works = allWorks.sort((a,b) => new Date(b.firstCommit) - new Date(a.firstCommit))
 ---
 
 <section id="latest_work">
@@ -55,9 +67,9 @@ const works = [
 
     .work {
         @include containers.container_item;
-        @apply w-full lg:w-1/2;
+        @apply w-full md:w-1/2;
         :global(.rendered_img) {
-            @apply max-w-full h-full #{!important}
+            @apply max-w-full h-full #{!important};
         }
     }
 
