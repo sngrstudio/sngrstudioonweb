@@ -6,7 +6,7 @@ export interface Props {
 const {title} = Astro.props
 ---
 
-<html>
+<html lang="id">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,3 +17,9 @@ const {title} = Astro.props
     <slot/>
 </body>
 </html>
+
+<style lang='scss'>
+    body {
+        @apply flex flex-col min-h-screen bg-gray-100;
+    }
+</style>

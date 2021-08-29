@@ -1,0 +1,67 @@
+---
+import Image from './image.tsx'
+
+const SCREENSHOT_SERVICE_URL = 'https://ss.sngr.dev'
+const GITHUB_URL = 'https://github.com' 
+const works = [
+    {
+        title: 'This Portfolio Website',
+        url: 'https://dev.sngr.dev',
+        repo: 'sastronegorodev/sastronegoro.dev',
+        status: 'ongoing'
+    },
+    {
+        title: 'DM3 KAMMI Kalsel-Kalteng',
+        url: 'https://dev--dm3kalselteng2021.netlify.app',
+        repo: 'radenpioneer/dm3kalselteng2021',
+        status: 'ongoing'
+    },
+    {
+        title: 'DPC PKS MB Ketapang',
+        url: 'https://pksmbketapang.org',
+        repo: 'sastronegorodev/pksmbketapang',
+        status: 'ongoing'
+    }
+]
+---
+
+<section id="latest_work">
+    <h1 class="title">Latest Work</h1>
+    <div class="works_container">
+        {works.map((work) => {
+            const screenshot = `${SCREENSHOT_SERVICE_URL}/${encodeURIComponent(work.url)}/opengraph/`
+            return (
+                <a class="work" href={work.url}>
+                    <Image src={screenshot} alt={work.title} width={509} height={267} client:visible />
+                    <h2 class="work_title">{work.title}</h2>
+                    <p>{work.status.toUpperCase()}</p>
+                </a>
+            )
+        })}
+    </div>
+</section>
+
+<style lang="scss">
+    @use './styles/common';
+    @use './styles/containers';
+
+    section {
+        @apply lg:col-span-6;
+    }
+
+    .works_container {
+        @include containers.container;
+    }
+
+    .work {
+        @include containers.container_item;
+        @apply w-full lg:w-1/2;
+        :global(.rendered_img) {
+            @apply max-w-full h-full #{!important}
+        }
+    }
+
+    .work_title {
+        @apply mt-4;
+    }
+</style>

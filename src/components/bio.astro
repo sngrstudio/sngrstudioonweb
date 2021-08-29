@@ -1,0 +1,26 @@
+---
+import { Markdown } from 'astro/components'
+const content = await fetch('https://raw.githubusercontent.com/radenpioneer/radenpioneer/main/README.md').then(res => res.text())
+---
+
+<section class="bio">
+    <Markdown content={content} />
+</section>
+
+<style lang="scss">
+    .bio {
+        @apply lg:col-span-4 prose max-w-none;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-bold my-4;
+    }
+ 
+    h3 {
+        @apply text-4xl;
+    }
+
+    p {
+        @apply text-xl my-2;
+    }
+</style>
