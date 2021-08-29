@@ -4,14 +4,14 @@ const content = await fetch('https://raw.githubusercontent.com/radenpioneer/rade
 const readmeurl = 'https://github.com/radenpioneer/radenpioneer/blob/main/README.md'
 ---
 
-<section id="bio">
+<section class="bio">
     <p class="path"><a href={readmeurl} target="_blank">radenpioneer/README.md</a></p>
     <Markdown content={content} />
 </section>
 
 <style lang="scss">
-    section {
-        @apply lg:col-span-4;
+    .bio {
+        @apply lg:col-span-4 prose max-w-none;
     }
 
     h1, h2, h3, h4, h5, h6 {
