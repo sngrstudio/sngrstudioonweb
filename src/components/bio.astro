@@ -1,11 +1,9 @@
 ---
 import { Markdown } from 'astro/components'
 const content = await fetch('https://raw.githubusercontent.com/radenpioneer/radenpioneer/main/README.md').then(res => res.text())
-const readmeurl = 'https://github.com/radenpioneer/radenpioneer/blob/main/README.md'
 ---
 
 <section class="bio">
-    <p class="path"><a href={readmeurl} target="_blank">radenpioneer/README.md</a></p>
     <Markdown content={content} />
 </section>
 
@@ -24,13 +22,5 @@ const readmeurl = 'https://github.com/radenpioneer/radenpioneer/blob/main/README
 
     p {
         @apply text-xl my-2;
-    }
-
-    .path {
-        @apply text-sm text-gray-400;
-        font-family: 'Cascadia Code', sans-serif;
-        a {
-            @apply hover:underline;
-        }
     }
 </style>
