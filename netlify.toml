@@ -1,9 +1,0 @@
-[dev]
-    framework = "#custom"
-    command = "yarn start"
-    autoLaunch = false
-    targetPort = 3000
-
-[build]
-    command = "yarn build"
-    publish = "dist"

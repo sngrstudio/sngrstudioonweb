@@ -1,17 +1,17 @@
 ---
-import Layout from '@layouts/base.astro'
+let title = 'My Astro Site';
 ---
-<Layout>
-    <section class="container">
-        <p>hello</p>
-    </section>
-</Layout>
-
-<style lang="scss">
-    .container {
-        @apply max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-6 gap-4 lg:gap-8;
-        :global(section) {
-            @apply rounded-xl border border-white shadow hover:shadow-lg transition-all bg-white p-6 lg:p-16;
-        }
-    }
-</style>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>{title}</title>
+    <link rel="stylesheet" href={Astro.resolve('../styles/global.css')}>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+</head>
+<body>
+    <main>
+    <p>hello</p>
+    </main>
+</body>
+</html>
