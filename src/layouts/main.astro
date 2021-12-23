@@ -1,0 +1,11 @@
+---
+import BaseLayout from './base.astro'
+
+const { title } = Astro.props
+const siteTitle = 'sngr.dev'
+---
+<BaseLayout title={`${title} | ${siteTitle}` || siteTitle}>
+    <main>
+        <slot/>
+    </main>
+</BaseLayout>

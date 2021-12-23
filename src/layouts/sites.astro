@@ -1,0 +1,15 @@
+---
+import MainLayout from './main.astro'
+
+const { content } = Astro.props
+const imgDeliveryURL = 'https://res.cloudinary.com/radenpioneer/image/fetch/w_600,f_auto/'
+const screenshotServiceURL = 'https://snap.sngr.dev/ss?url='
+---
+<MainLayout title={ content.title }>
+    <article>
+        <img src={`${imgDeliveryURL}${encodeURIComponent(screenshotServiceURL + content.url)}`} alt={content.title + ' screenshot'}>
+        <div id="description">
+            <slot/>
+        </div>
+    </article>
+</MainLayout>

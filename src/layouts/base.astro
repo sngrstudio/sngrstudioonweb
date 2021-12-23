@@ -1,0 +1,21 @@
+---
+let { title } = Astro.props
+---
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>{title}</title>
+    <link rel="stylesheet" href={Astro.resolve('../styles/global.css')}>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+</head>
+<body>
+    <slot/>
+</body>
+</html>
+
+<style lang="scss">
+    body {
+        @apply min-h-screen
+    }
+</style>

@@ -1,17 +1,6 @@
 ---
-let title = 'My Astro Site';
+import MainLayout from '../layouts/main.astro'
 ---
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
-    <title>{title}</title>
-    <link rel="stylesheet" href={Astro.resolve('../styles/global.css')}>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-</head>
-<body>
-    <main>
+<MainLayout>
     <p>hello</p>
-    </main>
-</body>
-</html>
+</MainLayout>
