@@ -1,6 +1,9 @@
 ---
 import MainLayout from '../layouts/main.astro'
+import ProjectSection from '../components/projects.svelte'
+
+const projects = Astro.fetchContent('./sites/*.md')
 ---
-<MainLayout>
-    <p>hello</p>
+<MainLayout title="Beranda">
+    <ProjectSection data={projects} />
 </MainLayout>
