@@ -1,0 +1,17 @@
+---
+import PostLayout from '@layouts/post.astro'
+import PostData from '@lib/blog.ts'
+
+export const getStaticPaths = async () => {
+    return PostData.map(post => {
+        return {
+            params: { slug: post.slug },
+            props: { post }
+        }
+    })
+}
+
+const { slug } = Astro.request.params
+const { post } = Astro.props
+---
+<PostLayout post={post} />

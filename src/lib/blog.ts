@@ -21,23 +21,11 @@ const GET_BLOG_POSTS = `
                     title,
                     slug,
                     dateAdded,
-                    brief
+                    contentMarkdown
                 }
             }
         }
     }
 `
 
-const GET_SINGLE_POST = `
-    query GetSinglePost($slug: String!) {
-        post(slug: $slug, hostname: "blog.sngr.dev") {
-            title,
-            slug,
-            dateAdded,
-            contentMarkdown
-        }
-    }
-`
-
-export const AllPosts = await gql(GET_BLOG_POSTS, { page: 0 }).then(result => result.data.user.publication.posts)
-export const SinglePost = async (slug) => await gql(GET_SINGLE_POST, { slug }).then(result => result.data.post) 
+export default await gql(GET_BLOG_POSTS, { page: 0 }).then(result => result.data.user.publication.posts)
