@@ -1,9 +1,18 @@
 ---
 import MainLayout from '@layouts/main.astro'
-import {AllPosts as blogArticles} from '../lib/blog.ts'
+import AllPosts from '@lib/blog.ts'
+import BlogComponent from '@components/blog.svelte'
 
 const projects = Astro.fetchContent('./sites/*.md')
 ---
 <MainLayout title="Beranda">
-    <p>{JSON.stringify(blogArticles)}</p>
+    <section class="section">
+        <BlogComponent posts={AllPosts} />
+    </section>
 </MainLayout>
+
+<style lang="scss">
+    .section {
+        @apply flex flex-col gap-4;
+    }
+</style>

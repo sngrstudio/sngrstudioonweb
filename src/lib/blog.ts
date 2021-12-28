@@ -21,6 +21,8 @@ const GET_BLOG_POSTS = `
                     title,
                     slug,
                     dateAdded,
+                    coverImage,
+                    brief,
                     contentMarkdown
                 }
             }
