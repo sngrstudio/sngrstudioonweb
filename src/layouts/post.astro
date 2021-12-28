@@ -5,8 +5,8 @@ import { Markdown } from 'astro/components'
 const { post } = Astro.props
 ---
 <MainLayout title={post.title}>
-    <article>
-        <h1>{ post.title }</h1>
+    <article id="article">
+        <h1 id="title">{ post.title }</h1>
         <div id="content">
             <Markdown content={post.contentMarkdown} />
         </div>
@@ -14,8 +14,8 @@ const { post } = Astro.props
 </MainLayout>
 
 <style lang="scss">
-    article {
-        h1 {
+    #article {
+        #title {
             @apply font-bold text-4xl text-center my-8 lg:mb-16;
         }
         #content {
