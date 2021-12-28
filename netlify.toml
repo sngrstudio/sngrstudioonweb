@@ -1,0 +1,15 @@
+[dev]
+    framework = "#custom"
+    command = "yarn start"
+    autoLaunch = false
+    targetPort = 3000
+
+[build]
+    command = "yarn build"
+    publish = "dist"
+
+[[redirects]]
+    from = "https://sastronegoro-dev.netlify.app/"
+    to = "https://sngr.dev/"
+    status = 301
+    force = true
