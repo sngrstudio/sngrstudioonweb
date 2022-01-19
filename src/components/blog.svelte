@@ -1,21 +1,23 @@
 <script lang="ts">
     import Button from '@components/utils/button.svelte'
+    import { DateTime } from 'luxon'
 
     export let posts
 </script>
 
 <section class="section">
     {#each posts as post}
-    <article class="container">
-        <div class="preview">
-            <h1 class="title">{post.title}</h1>
-            <p class="brief">{post.brief}</p>
-            <div class="links">
-                <Button href="/blog/{post.slug}" name="Read More" />
-                <Button href="https://blog.sngr.dev/{post.slug}" name="Read In blog" />
+    <a href="/blog/{post.slug}" class="container">
+        {#if post.coverImage}
+        <div class="img_container">
+            <div class="img">
+                <img src={post.coverImage} alt={post.title}>
             </div>
-        </div>
-    </article>
+        </div>    
+        {/if}
+        <p class="date"><time datetime={post.dateAdded}>{DateTime.fromISO(post.dateAdded).setLocale('id').toLocaleString(DateTime.DATE_FULL)}</time></p>
+        <h1 class="title">{post.title}</h1>
+    </a>
     {/each}
     <section class="footer">
         <Button href="https://blog.sngr.dev/" name="See all posts in Blog" />
@@ -27,19 +29,18 @@
         @apply grid grid-cols-4 gap-4;
     }
     .container {
-        @apply aspect-w-4 aspect-h-6;
-    }
-    .preview {
-        @apply flex flex-col gap-2 p-4;
-        @apply border border-gray-500 rounded-xl;
+        @apply flex flex-col gap-2;
         .title {
-            @apply font-extrabold text-xl lg:text-2xl text-center mb-auto;
+            @apply font-extrabold text-xl lg:text-2xl text-left;
         }
-        .brief {
-            @apply line-clamp-4 prose text-justify max-w-none;
+        .date {
+            @apply font-bold;
         }
-        .links {
-            @apply flex flex-row gap-2 place-content-evenly;
+    }
+    .img_container {
+        @apply aspect-w-3 aspect-h-4;
+        .img {
+            @apply w-full h-full;
         }
     }
     .footer {
