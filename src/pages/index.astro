@@ -1,8 +1,11 @@
 ---
 import MainLayout from '@layouts/main.astro'
 import Deck from '@components/deck.tsx'
+import Carousel from '@components/carousel.tsx'
 import AllPosts from '@lib/blog.ts'
+import getSites from '@lib/sites.ts'
 
+const sitesdata = getSites()
 const postsdata = AllPosts.slice(0,8).map(post => {
     return {
         title: post.title,
@@ -14,6 +17,9 @@ const postsdata = AllPosts.slice(0,8).map(post => {
 })
 ---
 <MainLayout title="Beranda">
+    <section class="section">
+        <Carousel sites={sitesdata} client:visible />
+    </section>
     <section class="section">
         <h1 class="section_title">Blog Posts</h1>
         <Deck data={postsdata} />

@@ -3,6 +3,7 @@
     "moduleResolution": "node",
     "target": "ES2017",
     "module": "esnext",
+    "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "paths": {
       "@lib/*" : ["./src/lib/*"],

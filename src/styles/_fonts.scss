@@ -9,3 +9,7 @@ $heading: 'Montserrat', $system, sans-serif;
         font-family: $default;
     }
 }
+
+@mixin isIcon {
+    font-family: 'Material Icons';
+}
