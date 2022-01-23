@@ -9,7 +9,7 @@
     publish = "dist"
 
 [[redirects]]
-    from = "https://sastronegoro-dev.netlify.app/"
+    from = "https://elastic-varahamihira-cb3fa7.netlify.app/"
     to = "https://sngr.dev/"
     status = 301
     force = true

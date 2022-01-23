@@ -1,18 +1,30 @@
 ---
 import MainLayout from '@layouts/main.astro'
+import Deck from '@components/deck.tsx'
 import AllPosts from '@lib/blog.ts'
-import BlogComponent from '@components/blog.svelte'
 
-const projects = Astro.fetchContent('./sites/*.md')
+const postsdata = AllPosts.slice(0,8).map(post => {
+    return {
+        title: post.title,
+        excerpt: post.brief,
+        date: post.dateAdded,
+        url: post.slug,
+        image: post.coverImage
+    }
+})
 ---
 <MainLayout title="Beranda">
     <section class="section">
-        <BlogComponent posts={AllPosts} />
+        <h1 class="section_title">Blog Posts</h1>
+        <Deck data={postsdata} />
     </section>
 </MainLayout>
 
 <style lang="scss">
     .section {
-        @apply flex flex-col gap-4;
+        @apply max-w-screen-xl mx-auto px-4 py-2;
+    }
+    .section_title {
+        @apply font-extrabold text-2xl lg:text-4xl mb-4;
     }
 </style>

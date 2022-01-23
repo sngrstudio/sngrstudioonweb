@@ -3,5 +3,5 @@
 
 body {
     @apply min-h-screen box-border;
-    @include fonts.default-font;
+    @include fonts.isHeading(false);
 }

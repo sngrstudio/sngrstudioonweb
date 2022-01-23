@@ -1,0 +1,5 @@
+@use '../fonts';
+
+.title {
+    @include fonts.isHeading(true);
+}
