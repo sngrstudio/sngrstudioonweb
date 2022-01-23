@@ -1,7 +1,7 @@
 import style from '@styles/modules/card.module.scss'
 
 const Card = ({ title, image="", excerpt, url }) => (
-    <a className="card card-bordered" href={url}>
+    <a className="card card-bordered shadow-md hover:shadow-lg" href={url}>
         {image ? (
         <figure>
             <img src={image} alt={title} />

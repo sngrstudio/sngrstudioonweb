@@ -21,10 +21,13 @@ const postsdata = AllPosts.slice(0,8).map(post => {
 </MainLayout>
 
 <style lang="scss">
+    @use '../styles/fonts';
+
     .section {
         @apply max-w-screen-xl mx-auto px-4 py-2;
     }
     .section_title {
         @apply font-extrabold text-2xl lg:text-4xl mb-4;
+        @include fonts.isHeading(true);
     }
 </style>
