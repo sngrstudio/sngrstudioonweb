@@ -1,5 +1,5 @@
 const getScreenshot = (url) => {
-    const SCREENSHOT_SERVICE_URL = 'https://snap.sngr.dev/snap?url='
+    const SCREENSHOT_SERVICE_URL = 'https://snap.sngr.dev/?w=1024&h=768&url='
     return SCREENSHOT_SERVICE_URL + url
 }
 
