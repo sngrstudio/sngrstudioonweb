@@ -1,15 +1,13 @@
 module.exports = {
-  mode: 'jit',
-  purge: ['./public/**/*.html', './src/**/*.{astro,svelte}'],
-  darkMode: false, // or 'media' or 'class'
-  theme: {
-    extend: {},
-  },
-  variants: {
-    extend: {},
-  },
+  content: [
+    './public/**/*.html',
+    './src/**/*.{astro,js,jsx,svelte,ts,tsx,vue}',
+  ],
   plugins: [
     require('@tailwindcss/typography'),
-    require('@tailwindcss/line-clamp')
+    require('daisyui')
   ],
+  daisyui: {
+    themes: false
+  }
 }

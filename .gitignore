@@ -1,6 +1,5 @@
 # build output
 dist
-.cache
 
 # dependencies
 node_modules/
@@ -18,5 +17,5 @@ yarn-error.log*
 # macOS-specific files
 .DS_Store
 
-# Local Netlify folder
+# Netlify local config
 .netlify

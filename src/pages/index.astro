@@ -1,24 +1,43 @@
 ---
-import MainLayout from '$layouts/main.astro'
-import TitleSection from '$components/title.astro'
-import NameCardSection from '$components/namecard.astro'
-import BioSection from '$components/bio.astro'
-import LatestWorkSection from '$components/latestwork.astro'
-import BlogSection from '$components/blog.astro'
+import BaseLayout from '@layouts:base.astro'
+import { Markdown } from 'astro/components'
+
+const content = await fetch('https://raw.githubusercontent.com/radenpioneer/radenpioneer/main/README.md')
+    .then(res => res.text())
 ---
-<MainLayout>
-    <section class="container">
-        <NameCardSection/>
-        <BioSection/>
-        <LatestWorkSection/>
+
+<BaseLayout title="sngr.dev" >
+    <section class="section">
+        <article id="bio">
+            <Markdown content={content} />
+        </article>
     </section>
-</MainLayout>
+</BaseLayout>
 
 <style lang="scss">
-    .container {
-        @apply max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-6 gap-4 lg:gap-8;
-        :global(section) {
-            @apply rounded-xl border border-white shadow hover:shadow-lg transition-all bg-white p-6 lg:p-16;
+    @use '../styles/fonts';
+    
+    .section { @apply max-w-screen-md mx-auto px-8 py-16; }
+    h1, h2, h3, h4, h5, h6 { @include fonts.isHeading(true); }
+    #bio {
+        @apply prose prose-lg max-w-none;
+        blockquote {
+            @apply alert border-0;
+            p {
+                @apply text-xl block m-0;
+            }
+        }
+        table {
+            @apply table table-auto;
+            td { 
+                @apply whitespace-normal text-center;
+                :global(img) { @apply block mx-auto; } 
+            }
+        }
+        hr { @apply my-4; }
+
+        p > img {
+            @apply w-full rounded-box border border-base-300 transition-shadow shadow hover:shadow-lg;
         }
     }
 </style>

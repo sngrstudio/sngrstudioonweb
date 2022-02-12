@@ -1,25 +1,28 @@
 ---
-export interface Props {
-    title: string
-}
-
-const {title} = Astro.props
+let { title } = Astro.props
 ---
-
 <html lang="id">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href={Astro.resolve('../styles/global.css')}>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
     <title>{title}</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 </head>
 <body>
     <slot/>
 </body>
 </html>
 
-<style lang='scss'>
-    body {
-        @apply flex flex-col min-h-screen bg-gray-100;
+<style lang="scss" global>
+    @use '../styles/global.scss';
+
+    details {
+        @apply collapse collapse-arrow border rounded-box border-base-300 transition-shadow shadow hover:shadow-lg mb-4;
+        summary {
+            @apply collapse-title cursor-pointer;
+            h4 { @apply inline; }
+        }
     }
+
+    a { @apply no-underline #{!important}; }
 </style>
