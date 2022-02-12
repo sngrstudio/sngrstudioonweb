@@ -36,8 +36,16 @@ const content = await fetch('https://raw.githubusercontent.com/radenpioneer/rade
         }
         hr { @apply my-4; }
 
-        p > img {
-            @apply w-full rounded-box border border-base-300 transition-shadow shadow hover:shadow-lg;
+        #my-github-stats + table img {
+            @apply w-full rounded-box border border-base-300 transition-shadow shadow hover:shadow-lg m-0;
+        }
+
+        #read-on-my-blog + ul {
+            @apply grid grid-cols-1 md:grid-cols-2 gap-4 p-0;
+            li { 
+                @apply card card-bordered border-base-300 transition-shadow shadow hover:shadow-lg; 
+                a { @apply card-body; }
+            }
         }
     }
 </style>
