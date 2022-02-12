@@ -1,2 +1,6 @@
-@use './tailwind';
+@use './tw';
 @use './fonts';
+
+body {
+    @include fonts.isHeading(false);
+}
