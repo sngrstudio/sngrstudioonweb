@@ -15,4 +15,14 @@ let { title } = Astro.props
 
 <style lang="scss" global>
     @use '../styles/global.scss';
+
+    details {
+        @apply collapse collapse-arrow border rounded-box border-base-300 transition-shadow shadow hover:shadow-lg mb-4;
+        summary {
+            @apply collapse-title cursor-pointer;
+            h4 { @apply inline; }
+        }
+    }
+
+    a { @apply no-underline #{!important}; }
 </style>

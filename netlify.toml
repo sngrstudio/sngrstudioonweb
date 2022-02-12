@@ -1,6 +1,6 @@
 [dev]
     framework = "#custom"
-    command = "yarn start"
+    command = "yarn dev"
     autoLaunch = false
     targetPort = 3000
 

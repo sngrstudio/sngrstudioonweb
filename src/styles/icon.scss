@@ -1,8 +1,0 @@
-@use './fonts';
-
-.icon {
-    @include fonts.isIcon;
-    @apply font-normal not-italic text-2xl leading-none tracking-normal normal-case inline-block whitespace-nowrap antialiased;
-    word-wrap: normal;
-    direction: ltr;
-}

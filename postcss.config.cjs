@@ -1,10 +1,12 @@
 module.exports = {
-  plugins: [
-    require('tailwindcss'),
-    require('postcss-font-magician')({
-      foundries: 'google',
-      display: 'swap'
-    }),
-    require('postcss-preset-env')
-  ],
+  plugins: {
+    tailwindcss: {},
+    "postcss-font-magician": { foundries: "google" },
+    "postcss-flexbugs-fixes": {},
+    "postcss-preset-env": {
+      "autoprefixer": { "flexbox": "no-2009" },
+      "stage": 3,
+      "features": { "custom-properties": false }
+    },
+  }
 }

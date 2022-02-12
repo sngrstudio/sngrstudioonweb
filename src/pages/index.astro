@@ -1,39 +1,43 @@
 ---
-import MainLayout from '@layouts/main.astro'
-import Deck from '@components/deck.tsx'
-import Carousel from '@components/carousel.tsx'
-import AllPosts from '@lib/blog.ts'
-import getSites from '@lib/sites.ts'
+import BaseLayout from '@layouts:base.astro'
+import { Markdown } from 'astro/components'
 
-const sitesdata = getSites()
-const postsdata = AllPosts.slice(0,8).map(post => {
-    return {
-        title: post.title,
-        excerpt: post.brief,
-        date: post.dateAdded,
-        url: post.slug,
-        image: post.coverImage
-    }
-})
+const content = await fetch('https://raw.githubusercontent.com/radenpioneer/radenpioneer/main/README.md')
+    .then(res => res.text())
 ---
-<MainLayout title="Beranda">
+
+<BaseLayout title="sngr.dev" >
     <section class="section">
-        <Carousel sites={sitesdata} client:visible />
+        <article id="bio">
+            <Markdown content={content} />
+        </article>
     </section>
-    <section class="section">
-        <h1 class="section_title">Blog Posts</h1>
-        <Deck data={postsdata} />
-    </section>
-</MainLayout>
+</BaseLayout>
 
 <style lang="scss">
     @use '../styles/fonts';
+    
+    .section { @apply max-w-screen-md mx-auto px-8 py-16; }
+    h1, h2, h3, h4, h5, h6 { @include fonts.isHeading(true); }
+    #bio {
+        @apply prose prose-lg max-w-none;
+        blockquote {
+            @apply alert border-0;
+            p {
+                @apply text-xl block m-0;
+            }
+        }
+        table {
+            @apply table table-auto;
+            td { 
+                @apply whitespace-normal text-center;
+                :global(img) { @apply block mx-auto; } 
+            }
+        }
+        hr { @apply my-4; }
 
-    .section {
-        @apply max-w-screen-xl mx-auto px-4 py-2;
-    }
-    .section_title {
-        @apply font-extrabold text-2xl lg:text-4xl mb-4;
-        @include fonts.isHeading(true);
+        p > img {
+            @apply w-full rounded-box border border-base-300 transition-shadow shadow hover:shadow-lg;
+        }
     }
 </style>
