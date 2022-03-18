@@ -14,7 +14,7 @@
     [plugins.inputs]
         paths = [
             ".cache",
-            "dist/image/o"
+            "dist/img/_o"
         ]
 
 [[redirects]]
