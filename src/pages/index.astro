@@ -1,51 +1,8 @@
 ---
 import BaseLayout from '@layouts:base.astro'
-import { Markdown } from 'astro/components'
-
-const content = await fetch('https://raw.githubusercontent.com/radenpioneer/radenpioneer/main/README.md')
-    .then(res => res.text())
+import HeroComponent from '@components:hero.astro'
 ---
 
 <BaseLayout title="sngr.dev" >
-    <section class="section">
-        <article id="bio">
-            <Markdown content={content} />
-        </article>
-    </section>
+    <HeroComponent />
 </BaseLayout>
-
-<style lang="scss">
-    @use '../styles/fonts';
-    
-    .section { @apply max-w-screen-md mx-auto px-8 py-16; }
-    h1, h2, h3, h4, h5, h6 { @include fonts.isHeading(true); }
-    #bio {
-        @apply prose prose-lg max-w-none;
-        blockquote {
-            @apply alert alert-info border-0;
-            p {
-                @apply not-italic text-xl block m-0;
-            }
-        }
-        table {
-            @apply table table-auto;
-            td { 
-                @apply whitespace-normal text-center;
-                :global(img) { @apply block mx-auto; } 
-            }
-        }
-        hr { @apply my-4; }
-
-        #my-github-stats + table img {
-            @apply w-full rounded-box border border-base-300 transition-shadow shadow hover:shadow-lg m-0;
-        }
-
-        #read-on-my-blog + ul {
-            @apply grid grid-cols-1 md:grid-cols-2 gap-4 p-0;
-            li { 
-                @apply card card-bordered border-base-300 transition-shadow shadow hover:shadow-lg; 
-                a { @apply card-body; }
-            }
-        }
-    }
-</style>

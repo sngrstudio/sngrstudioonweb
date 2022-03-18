@@ -19,3 +19,7 @@ yarn-error.log*
 
 # Netlify local config
 .netlify
+
+#cache plugin
+.cache
+public/img/o/

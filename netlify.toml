@@ -8,6 +8,14 @@
     command = "yarn build"
     publish = "dist"
 
+[[plugins]]
+    package = "netlify-plugin-cache"
+
+    [plugins.inputs]
+        paths = [
+            ".cache"
+        ]
+
 [[redirects]]
     from = "https://elastic-varahamihira-cb3fa7.netlify.app/"
     to = "https://sngr.dev/"
