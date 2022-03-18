@@ -1,7 +1,7 @@
 import Image from '@11ty/eleventy-img'
 import Cache from '@11ty/eleventy-fetch'
 
-const getImage = async (url, widths = []) => {
+const getImage = async (url, {widths = []}) => {
     const result = await Image(url, {
         outputDir: './public/img/o/',
         urlPath: '/img/o/',

@@ -2,7 +2,9 @@
 import { getImage } from '@lib:assets.ts'
 
 const BG_IMG_SRC = 'https://www.placemonkeys.com/7680/4320'
-const bg = await getImage(BG_IMG_SRC)
+const bg = await getImage(BG_IMG_SRC, {
+    widths: [1280]
+})
 ---
 <section>
     <div class="hero__wrap" style={`background-image: url(${bg.jpeg[0].url});`}>
