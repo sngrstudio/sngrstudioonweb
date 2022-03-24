@@ -3,9 +3,9 @@ import Cache from '@11ty/eleventy-fetch'
 
 const getImage = async (url, {widths = []}) => {
     const result = await Image(url, {
-        outputDir: './dist/img/_o/',
+        outputDir: './public/img/_o/',
         urlPath: '/img/_o/',
-        widths: widths.concat([null]),
+        widths: widths.length === 0 ? [null] : widths,
         formats: ['avif', 'webp', 'jpeg']
     })
 

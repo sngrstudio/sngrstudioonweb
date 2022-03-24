@@ -22,4 +22,4 @@ yarn-error.log*
 
 #cache plugin
 .cache
-public/img/o/
+public/img/_o/
