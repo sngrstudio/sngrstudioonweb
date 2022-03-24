@@ -1,9 +1,11 @@
 import Image from '@11ty/eleventy-img'
 import Cache from '@11ty/eleventy-fetch'
 
+const isProd = import.meta.env.PROD
+
 const getImage = async (url, {widths = []}) => {
     const result = await Image(url, {
-        outputDir: './public/img/_o/',
+        outputDir: isProd ? './dist/img/_o/' : './public/img/_o/',
         urlPath: '/img/_o/',
         widths: widths.length === 0 ? [null] : widths,
         formats: ['avif', 'webp', 'jpeg']
