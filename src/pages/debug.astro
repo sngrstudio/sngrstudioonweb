@@ -1,11 +1,13 @@
 ---
 import BaseLayout from '@layouts:base.astro'
 import { Debug } from 'astro/components'
-import { getVideosData, getVideos } from '@lib:pexels.ts'
+import getPexelsImages from '@lib:pexels.ts'
+import {getImage} from '@lib:assets.ts'
 
-const debugData = await getVideosData('digital')
+const imagesFromPexels = await getPexelsImages('kittens')
+const debugData = imagesFromPexels.map( async (image) => await getImage(image.src.original, {widths: [300]}))
 ---
 
 <BaseLayout title="debug \u2014 sngr.dev" >
-    <Debug {debugData.map(data => data.video_files)} />
+    <Debug {debugData} />
 </BaseLayout>

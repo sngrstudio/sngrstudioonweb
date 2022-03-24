@@ -1,19 +1,20 @@
 import { getAsset } from '@lib:assets'
 
-const getVideosData = async (query) => {
-    const result = await getAsset(`https://api.pexels.com/videos/search?query=${query}&per_page=25`, {
+const PEXELS_ENDPOINT = 'https://api.pexels.com/v1/search'
+const PEXELS_API_KEY = import.meta.env.PEXELS_API_KEY || process.env.PEXELS_API_KEY
+
+const getPexelsImages = async (query) => {
+    const url = PEXELS_ENDPOINT + `?query=${query}&orientation=landscape&per_page=20`
+    const result = await getAsset(url, {
         type: 'json',
         options: {
-            headers: {'Authorization': import.meta.env.PEXELS_API_KEY || process.env.PEXELS_API_KEY}
+            headers: {
+                'Authorization': PEXELS_API_KEY
+            }
         }
     })
 
-    return result.videos
+    return result.photos
 }
 
-const getVideos = async (query) => {
-    const result = await getVideosData(query)
-    return result
-} 
-
-export { getVideosData, getVideos }
+export default getPexelsImages
