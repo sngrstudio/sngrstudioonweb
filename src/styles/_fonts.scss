@@ -9,3 +9,11 @@ $heading: 'Exo', $system;
         font-family: $default;
     }
 }
+
+%heading {
+    @include isHeading(true);
+}
+
+%not_heading {
+    @include isHeading(false);
+}

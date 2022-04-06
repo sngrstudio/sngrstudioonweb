@@ -1,4 +1,6 @@
 ---
+import '@styles/global.scss'
+
 let { title } = Astro.props
 ---
 <html lang="id">
@@ -12,7 +14,3 @@ let { title } = Astro.props
     <slot/>
 </body>
 </html>
-
-<style lang="scss" global>
-    @use '../styles/global.scss';
-</style>

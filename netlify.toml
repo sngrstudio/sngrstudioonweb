@@ -9,13 +9,9 @@
     publish = "dist"
 
 [[plugins]]
-    package = "netlify-plugin-cache"
-
-    [plugins.inputs]
-        paths = [
-            ".cache",
-            "public/img/_o"
-        ]
+    package = "netlify-plugin-minify-html"
+    [plugins.inputs.minifierOptions]
+        collapseWhitespace = true
 
 [[redirects]]
     from = "https://elastic-varahamihira-cb3fa7.netlify.app/"
