@@ -1,2 +1,8 @@
 image:
   file: .gitpod.dockerfile
+
+tasks:
+  - name: initialization
+    init: |
+      npm i -g netlify-cli
+      yarn
