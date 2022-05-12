@@ -1,0 +1,18 @@
+---
+import ShowcaseHero from './showcase-hero.tsx'
+
+const projects = await Astro.glob('../../pages/projects/*.md')
+---
+
+<section>
+    {projects.map(project => (
+        <ShowcaseHero 
+            title={project.frontmatter.title}
+            image={project.frontmatter.image}
+            headline={project.frontmatter.headline}
+            color={project.frontmatter['color-theme']}
+            url={project.url}
+            client:visible
+        />
+    ))}
+</section>

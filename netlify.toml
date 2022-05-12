@@ -1,8 +1,6 @@
 [dev]
-    framework = "#custom"
     command = "yarn dev"
     autoLaunch = false
-    targetPort = 3000
 
 [build]
     command = "yarn build"

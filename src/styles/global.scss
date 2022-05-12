@@ -2,9 +2,5 @@
 @use './fonts';
 
 body {
-    @extend %not_heading;
-}
-
-.heading {
-    @extend %heading;
+    @extend %body;
 }

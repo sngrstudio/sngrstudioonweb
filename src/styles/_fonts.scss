@@ -1,19 +1,11 @@
-$system: system-ui, sans-serif;
-$default: $system;
+$system: system-ui, Arial, sans-serif;
+$default: 'Ubuntu', $system;
 $heading: 'Exo', $system;
 
-@mixin isHeading($isheading) {
-    @if $isheading == true {
-        font-family: $heading;
-    } @else {
-        font-family: $default;
-    }
-}
-
 %heading {
-    @include isHeading(true);
+    font-family: $heading;
 }
 
-%not_heading {
-    @include isHeading(false);
+%body {
+    font-family: $default;
 }
