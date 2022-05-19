@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import getImageUrl from '@lib/image'
 import style from './hero.module.scss'
 
 interface IShowcaseHero {
@@ -7,6 +8,7 @@ interface IShowcaseHero {
     headline: string
     url?: string
     color?: string
+    imageLazy?: boolean
 }
 
 const hexToRgba = (hex, alpha?) => {
@@ -18,12 +20,12 @@ const hexToRgba = (hex, alpha?) => {
     else return `rgb(${r}, ${g}, ${b})`
 }
 
-const ShowcaseHero:FC<IShowcaseHero> = ({ title, image, headline, color, url }) => {
+const ShowcaseHero:FC<IShowcaseHero> = ({ title, image, headline, color, url, imageLazy=true }) => {
     return (
         <>
             <div className={style.hero}>
-                <img src={image} alt={headline} />
-                <div className={style.hero_title} style={{ backgroundColor: hexToRgba(color, 0.5) }}>
+                <img src={getImageUrl(image)} alt={headline} loading={imageLazy ? 'lazy' : 'eager'} decoding="async" />
+                <div className={style.hero_title} style={{ backgroundColor: hexToRgba(color, 0.7) }}>
                     <h2>{title}</h2>
                 </div>
             </div>

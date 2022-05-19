@@ -9,7 +9,7 @@ const { content } = Astro.props
         title={content.title}
         image={content.image}
         headline={content.headline}
-        color={content['color-theme']}
+        color={content.colorTheme}
         client:load
     />
     <slot />

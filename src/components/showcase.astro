@@ -5,14 +5,18 @@ const projects = await Astro.glob('../pages/projects/*.md')
 ---
 
 <section>
-    {projects.map(project => (
-        <ShowcaseHero 
-            title={project.frontmatter.title}
-            image={project.frontmatter.image}
-            headline={project.frontmatter.headline}
-            color={project.frontmatter['color-theme']}
-            url={project.url}
-            client:visible
-        />
+    {projects
+        .sort((a, b) => b.frontmatter.createdOn - a.frontmatter.createdOn)
+        .slice(0,5)
+        .map((project, i) => (
+            <ShowcaseHero 
+                title={project.frontmatter.title}
+                image={project.frontmatter.image}
+                headline={project.frontmatter.headline}
+                color={project.frontmatter.colorTheme}
+                url={project.url}
+                imageLazy={i === 0 ? false : true}
+                client:visible
+            />
     ))}
 </section>
