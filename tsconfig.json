@@ -1,8 +1,11 @@
 {
   "compilerOptions": {
     "moduleResolution": "node",
-    "target": "ES2017",
+    "target": "esnext",
     "module": "esnext",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "types": ["vite/client"],
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "paths": {

@@ -1,0 +1,17 @@
+.hero {
+    @apply h-screen relative;
+    > img { @apply h-full w-full object-cover object-center; }
+    > .hero_title { 
+        @apply absolute inset-0 flex flex-col items-center justify-center; 
+        > h2 { @apply text-white text-6xl lg:text-8xl text-center font-extrabold max-w-lg; }
+    }
+}
+
+.headline {
+    @apply h-auto lg:h-[50vh] grid place-items-center p-12;
+    .headline_inner {
+        @apply flex flex-col items-start justify-center gap-8 max-w-screen-md;
+        > h3 { @apply text-white text-2xl lg:text-5xl; }
+        > .a { @apply text-xl lg:text-2xl text-white link link-hover; }
+    }
+}

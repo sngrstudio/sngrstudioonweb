@@ -10,6 +10,7 @@
     package = "netlify-plugin-minify-html"
     [plugins.inputs.minifierOptions]
         collapseWhitespace = true
+        minifyJS = true
 
 [[redirects]]
     from = "https://elastic-varahamihira-cb3fa7.netlify.app/"

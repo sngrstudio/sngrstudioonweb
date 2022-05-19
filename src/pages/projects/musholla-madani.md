@@ -7,5 +7,6 @@ tools:
     - tailwindcss
     - netlify
 color-theme: "#3388cb"
+layout: "@layouts/projects.astro"
 ---
 Description about the project here

@@ -1,0 +1,16 @@
+---
+import BaseLayout from './base.astro'
+import ShowcaseHero from '@components/hero/hero.tsx'
+
+const { content } = Astro.props
+---
+<BaseLayout title={content.title}>
+    <ShowcaseHero 
+        title={content.title}
+        image={content.image}
+        headline={content.headline}
+        color={content['color-theme']}
+        client:load
+    />
+    <slot />
+</BaseLayout>
