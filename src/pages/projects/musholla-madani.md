@@ -8,6 +8,8 @@ tools:
     - tailwindcss
     - netlify
 colorTheme: "#3388cb"
+url: "https://www.mushollamadani.com/"
+active: true
 layout: "@layouts/projects.astro"
 ---
 Description about the project here

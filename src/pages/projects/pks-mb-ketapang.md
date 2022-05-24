@@ -9,6 +9,8 @@ tools:
     - tailwindcss
     - netlify
 colorTheme: "#ff5000"
+url: "https://www.pksmbketapang.org/"
+active: true
 layout: "@layouts/projects.astro"
 ---
 Description about the project here

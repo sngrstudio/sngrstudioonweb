@@ -1,0 +1,19 @@
+---
+import BaseLayout from './base.astro'
+import Grid from '@components/grid/grid.tsx'
+
+const { content } = Astro.props
+const projects = await Astro.glob('../pages/projects/*.md')
+---
+<BaseLayout title={content.title}>
+    <section>
+        <Grid 
+            items={projects.map(project => { 
+                return { 
+                    title: project.frontmatter.title, 
+                    image: project.frontmatter.image 
+                    } 
+                })}
+        />
+    </section>
+</BaseLayout>
