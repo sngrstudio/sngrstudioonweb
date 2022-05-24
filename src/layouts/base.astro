@@ -1,5 +1,6 @@
 ---
 import '@styles/global.scss'
+import Footer from '@components/footer.astro'
 
 let { title } = Astro.props
 ---
@@ -15,5 +16,6 @@ let { title } = Astro.props
     <main>
       <slot></slot>
     </main>
+    <Footer />
   </body>
 </html>
