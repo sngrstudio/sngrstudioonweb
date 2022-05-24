@@ -1,12 +1,13 @@
 ---
 import ShowcaseHero from '@components/hero/hero.tsx'
+import { DateTime } from 'luxon'
 
 const projects = await Astro.glob('../pages/projects/*.md')
 ---
 
 <section>
     {projects
-        .sort((a, b) => b.frontmatter.createdOn - a.frontmatter.createdOn)
+        .sort((a, b) => DateTime.fromISO(b.frontmatter.createdOn).toMillis() - DateTime.fromISO(a.frontmatter.createdOn).toMillis())
         .filter(project => project.frontmatter.active)
         .slice(0,5)
         .map((project, i) => (
