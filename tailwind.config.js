@@ -3,11 +3,8 @@ module.exports = {
     './public/**/*.html',
     './src/**/*.{astro,js,jsx,svelte,ts,tsx,vue}',
   ],
-  plugins: [
-    require('@tailwindcss/typography'),
-    require('daisyui')
-  ],
+  plugins: [require('@tailwindcss/typography'), require('daisyui')],
   daisyui: {
-    themes: false
-  }
+    themes: false,
+  },
 }

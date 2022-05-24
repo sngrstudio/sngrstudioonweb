@@ -9,11 +9,11 @@
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "paths": {
-      "@lib/*" : ["./src/lib/*"],
-      "@layouts/*" : ["./src/layouts/*"],
-      "@components/*" : ["./src/components/*"],
-      "@pages/*" : ["./src/pages/*"],
-      "@styles/*" : ["./src/styles/*"],
+      "@lib/*": ["./src/lib/*"],
+      "@layouts/*": ["./src/layouts/*"],
+      "@components/*": ["./src/components/*"],
+      "@pages/*": ["./src/pages/*"],
+      "@styles/*": ["./src/styles/*"]
     }
   }
 }

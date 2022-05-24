@@ -1,4 +1,4 @@
 ---
-layout: "@layouts/home.astro"
+layout: '@layouts/home.astro'
 title: SNGR Studio
 ---

@@ -6,27 +6,41 @@ import { DateTime } from 'luxon'
 const { content } = Astro.props
 const projects = await Astro.glob('../pages/projects/*.md')
 ---
+
 <BaseLayout title={content.title}>
-    <section class="flex flex-col gap-8">
-        <section class="flex flex-col items-center justify-center min-h-[50vh] py-16" style={`background-color: ${content.colorTheme}`}>
-            <div class="flex flex-col gap-4 max-w-screen-lg mx-auto px-8 text-base-100">
-                <h1 class="font-extrabold text-lg md:text-xl uppercase">{content.title}</h1>
-                <p class="text-3xl md:text-5xl">{content.description}</p>
-            </div>
-        </section>
-        <section class="max-w-screen-lg mx-auto px-8 mb-16">
-        <Grid 
-            items={projects
-                .sort((a, b) => DateTime.fromISO(b.frontmatter.createdOn).toMillis() - DateTime.fromISO(a.frontmatter.createdOn).toMillis())
-                .map(project => {
-                    const projectURL = new URL(project.frontmatter.url) 
-                    return { 
-                        title: project.frontmatter.title, 
-                        image: `https://snap.sngr.dev/image/${encodeURIComponent(projectURL.hostname)}/1600,1000/`,
-                        url: project.url 
-                        } 
-                })}
-        />
-        </section>
+  <section class='flex flex-col gap-8'>
+    <section
+      class='flex flex-col items-center justify-center min-h-[50vh] py-16'
+      style={`background-color: ${content.colorTheme}`}
+    >
+      <div
+        class='flex flex-col gap-4 max-w-screen-lg mx-auto px-8 text-base-100'
+      >
+        <h1 class='font-extrabold text-lg md:text-xl uppercase'>
+          {content.title}
+        </h1>
+        <p class='text-3xl md:text-5xl'>{content.description}</p>
+      </div>
     </section>
+    <section class='max-w-screen-lg mx-auto px-8 mb-16'>
+      <Grid
+        items={projects
+          .sort(
+            (a, b) =>
+              DateTime.fromISO(b.frontmatter.createdOn).toMillis() -
+              DateTime.fromISO(a.frontmatter.createdOn).toMillis()
+          )
+          .map((project) => {
+            const projectURL = new URL(project.frontmatter.url)
+            return {
+              title: project.frontmatter.title,
+              image: `https://snap.sngr.dev/image/${encodeURIComponent(
+                projectURL.hostname
+              )}/1600,1000/`,
+              url: project.url,
+            }
+          })}
+      />
+    </section>
+  </section>
 </BaseLayout>

@@ -6,7 +6,10 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "start": "run-s build preview"
+    "start": "run-s build preview",
+    "format": "yarn prettier --write .",
+    "clean": "yarn del-cli \"dist\"",
+    "prebuild": "yarn prettier --check ."
   },
   "devDependencies": {
     "@astrojs/react": "^0.1.2",
@@ -24,6 +27,8 @@
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-font-magician": "^3.0.0",
     "postcss-preset-env": "^7.6.0",
+    "prettier": "2.6.2",
+    "prettier-plugin-astro": "^0.1.0-next.4",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "sass": "^1.51.0",

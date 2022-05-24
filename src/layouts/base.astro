@@ -3,16 +3,17 @@ import '@styles/global.scss'
 
 let { title } = Astro.props
 ---
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
+
+<html lang='id'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width' />
     <title>{title}</title>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-</head>
-<body>
+    <link rel='icon' type='image/x-icon' href='/favicon.ico' />
+  </head>
+  <body>
     <main>
-        <slot/>
+      <slot></slot>
     </main>
-</body>
+  </body>
 </html>
