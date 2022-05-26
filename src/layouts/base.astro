@@ -1,6 +1,6 @@
 ---
 import '@styles/global.scss'
-import Footer from '@components/footer.astro'
+import Header from '@components/header/header.tsx'
 
 let { title } = Astro.props
 ---
@@ -13,9 +13,9 @@ let { title } = Astro.props
     <link rel='icon' type='image/x-icon' href='/favicon.ico' />
   </head>
   <body>
+    <Header client:load />
     <main>
       <slot></slot>
     </main>
-    <Footer />
   </body>
 </html>
