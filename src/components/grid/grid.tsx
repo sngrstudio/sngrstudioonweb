@@ -15,7 +15,12 @@ const Grid: FC<IGrid> = ({ items }) => {
   return (
     <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
       {items.map((item) => (
-        <GridItem image={item.image} title={item.title} url={item.url} />
+        <GridItem
+          image={item.image}
+          title={item.title}
+          url={item.url}
+          key={item.title}
+        />
       ))}
     </section>
   )
