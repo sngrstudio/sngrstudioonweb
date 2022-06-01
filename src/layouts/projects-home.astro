@@ -4,7 +4,7 @@ import Grid from '@components/grid/grid.tsx'
 import { DateTime } from 'luxon'
 
 const { content } = Astro.props
-const projects = await Astro.glob('../pages/projects/*.md')
+const projects = await Astro.glob('../pages/karya/*.md')
 ---
 
 <BaseLayout title={content.title}>

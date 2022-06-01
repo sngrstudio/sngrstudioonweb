@@ -3,9 +3,9 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
+    "dev": "astro dev --experimental-integrations",
+    "build": "astro build --experimental-integrations",
+    "preview": "astro preview --experimental-integrations",
     "start": "run-s build preview",
     "format": "yarn prettier --write .",
     "clean": "yarn del-cli \"dist\"",
@@ -34,5 +34,7 @@
     "sass": "^1.51.0",
     "tailwindcss": "^3.0.24"
   },
-  "dependencies": {}
+  "dependencies": {
+    "astro-imagetools": "^0.6.9"
+  }
 }

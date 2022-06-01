@@ -1,5 +1,6 @@
 import { FC, useState, useEffect } from 'react'
 import menus from '@components/shared/menu'
+import logo from '@assets/logo-n.png?w=120'
 import style from './header.module.scss'
 
 const Header: FC = () => {
@@ -22,12 +23,12 @@ const Header: FC = () => {
   return (
     <header
       className={`navbar fixed top-0 inset-x-0 z-10 ${
-        !visible ? 'translate-y-[-64px]' : ''
-      } transition-transform`}
+        !visible ? 'translate-y-[-90px]' : ''
+      } transition-transform p-4`}
     >
       <div className="flex-1">
-        <a className="btn btn-ghost text-xl text-base-100" href="/">
-          SNGR Studio
+        <a className="" href="/">
+          <img src={logo} width={120} height={60} alt="SNGR Studio's Logo" />
         </a>
       </div>
       <ul className="md:menu md:menu-horizontal hidden">

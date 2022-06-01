@@ -1,6 +1,7 @@
 ---
 import '@styles/global.scss'
 import Header from '@components/header/header.tsx'
+import Icons from '@components/icons/icons.astro'
 
 let { title } = Astro.props
 ---
@@ -10,7 +11,7 @@ let { title } = Astro.props
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width' />
     <title>{title}</title>
-    <link rel='icon' type='image/x-icon' href='/favicon.ico' />
+    <Icons />
   </head>
   <body>
     <Header client:load />
