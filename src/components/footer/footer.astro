@@ -1,20 +1,4 @@
 ---
-const menus = [
-  { name: 'Home', url: '/' },
-  { name: 'Projects', url: '/projects' },
-  { name: 'Concepts', url: '/concepts' },
-  { name: 'Contact', url: '/contact' },
-]
+import Footer from './footer'
 ---
-
-<footer
-  class='footer footer-center bg-base-200 text-base-content min-h-[25vh] p-8'
->
-  <ul class='grid grid-flow-col gap-4'>
-    {menus.map((menu) => (
-      <li class="text-lg md:text-xl">
-        <a href={menu.url}>{menu.name}</a>
-      </li>
-    ))}
-  </ul>
-</footer>
+<Footer />
