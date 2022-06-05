@@ -8,7 +8,7 @@
     "preview": "astro preview --experimental-integrations",
     "start": "run-s build preview",
     "format": "yarn prettier --write .",
-    "clean": "yarn del-cli \"dist\"",
+    "clean": "npx del-cli \"dist\"",
     "prebuild": "yarn prettier --check ."
   },
   "devDependencies": {
