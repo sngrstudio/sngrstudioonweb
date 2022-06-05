@@ -17,16 +17,3 @@
     to = "https://sngr.dev/:splat"
     status = 301
     force = true
-
-# temporary redirect
-[[redirects]] 
-    from = "/"
-    to = "/soon"
-    status = 301
-    force = true
-
-[[redirects]] 
-    from = "/karya/*"
-    to = "/soon"
-    status = 301
-    force = true
