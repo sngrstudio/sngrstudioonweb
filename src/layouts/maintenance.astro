@@ -1,0 +1,46 @@
+---
+import '@styles/global.scss'
+import logo from '@assets/logo-c.png?w=300'
+import Icons from '@components/icons/icons.astro'
+import {
+  BackgroundImage,
+  ImageSupportDetection,
+} from 'astro-imagetools/components'
+
+const bgImage = 'https://source.unsplash.com/1920x1080/?tech'
+const title = 'Coming Soon'
+---
+
+<html lang='id'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width' />
+    <title>{`${title} | SNGR Studio`}</title>
+    <ImageSupportDetection />
+    <Icons />
+  </head>
+  <body>
+    <BackgroundImage src={bgImage}>
+      <section class='maintenance__page'>
+        <div class='wrapper'>
+          <img src={logo} width={300} height='auto' alt={title} />
+          <h1 class='coming__soon'>{title}</h1>
+        </div>
+      </section>
+    </BackgroundImage>
+  </body>
+</html>
+
+<style>
+  .maintenance__page {
+    @apply grid place-content-center h-screen p-8;
+  }
+
+  .wrapper {
+    @apply flex flex-col items-center justify-center gap-8;
+  }
+
+  .coming__soon {
+    @apply text-base-100 text-2xl lg:text-4xl font-extrabold;
+  }
+</style>

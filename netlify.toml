@@ -1,8 +1,6 @@
 [dev]
-    framework = "#custom"
     command = "yarn dev"
     autoLaunch = false
-    targetPort = 3000
 
 [build]
     command = "yarn build"
@@ -12,6 +10,7 @@
     package = "netlify-plugin-minify-html"
     [plugins.inputs.minifierOptions]
         collapseWhitespace = true
+        minifyJS = true
 
 [[redirects]]
     from = "https://elastic-varahamihira-cb3fa7.netlify.app/"

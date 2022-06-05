@@ -1,0 +1,10 @@
+---
+import BaseLayout from './base.astro'
+import Showcase from '@components/showcase/showcase.astro'
+
+const { content } = Astro.props
+---
+
+<BaseLayout title={content.title}>
+  <Showcase />
+</BaseLayout>

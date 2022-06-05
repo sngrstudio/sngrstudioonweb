@@ -1,0 +1,44 @@
+---
+import BaseLayout from './base.astro'
+import ShowcaseHero from '@components/hero/hero.tsx'
+import PostDescription from '@components/post/description/description.tsx'
+import PostScreenshots from '@components/post/screenshots/screenshots.tsx'
+import hexToRgba from '@lib/hextorgba.ts'
+
+const { content } = Astro.props
+---
+
+<BaseLayout title={content.title}>
+  <ShowcaseHero
+    title={content.title}
+    image={content.image}
+    headline={content.headline}
+    color={content.colorTheme}
+  />
+  <PostDescription>
+    <slot></slot>
+  </PostDescription>
+  <div
+    class='py-16 px-4 md:px-8'
+    style={`background-color: ${hexToRgba(content.colorTheme[0])}`}
+  >
+    <PostScreenshots items={content.screenshots} />
+  </div>
+  <div
+    class='py-16 px-4 md:px-8'
+    style={`background-color: ${hexToRgba(content.colorTheme[1])}`}
+  >
+    <PostScreenshots items={content.screenshots} mobile={true} />
+  </div>
+  <div
+    class='flex items-center justify-center py-16'
+    style={`background-color: ${hexToRgba(content.colorTheme[1])}`}
+  >
+    <a
+      class='btn btn-lg btn-wide btn-primary'
+      href={content.url}
+      target='_blank'
+      >Kunjungi
+    </a>
+  </div>
+</BaseLayout>

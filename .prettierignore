@@ -1,0 +1,31 @@
+# build output
+dist
+
+# dependencies
+node_modules/
+.snowpack/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# environment variables
+.env
+.env.production
+
+# macOS-specific files
+.DS_Store
+
+# Netlify local config
+.netlify
+
+#cache plugin
+.cache
+public/img/_o/
+
+# all .md files
+**/**.md
+
+# public
+public

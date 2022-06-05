@@ -1,0 +1,27 @@
+---
+import ShowcaseHero from '@components/hero/hero.tsx'
+import { DateTime } from 'luxon'
+
+const projects = await Astro.glob('../../pages/karya/*.md')
+---
+
+<>
+  {projects
+    .sort(
+      (a, b) =>
+        DateTime.fromISO(b.frontmatter.createdOn).toMillis() -
+        DateTime.fromISO(a.frontmatter.createdOn).toMillis()
+    )
+    .filter((project) => project.frontmatter.active)
+    .slice(0, 5)
+    .map((project, i) => (
+      <ShowcaseHero
+        title={project.frontmatter.title}
+        image={project.frontmatter.image}
+        headline={project.frontmatter.headline}
+        color={project.frontmatter.colorTheme}
+        url={project.url}
+        imageLazy={i === 0 ? false : true}
+      />
+    ))}
+</>
