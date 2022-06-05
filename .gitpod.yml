@@ -3,7 +3,5 @@ image:
 
 tasks:
   - name: initialization
-    init: |
-      npm i -g netlify-cli
-      yarn
+    init: yarn
     command: exit
