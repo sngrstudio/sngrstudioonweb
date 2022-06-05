@@ -10,10 +10,17 @@
     package = "netlify-plugin-minify-html"
     [plugins.inputs.minifierOptions]
         collapseWhitespace = true
-        minifyJS = true
+        minifyJS = true # doesn't work as expected
 
 [[redirects]]
-    from = "https://elastic-varahamihira-cb3fa7.netlify.app/"
-    to = "https://sngr.dev/"
+    from = "https://elastic-varahamihira-cb3fa7.netlify.app/*"
+    to = "https://sngr.dev/:splat"
+    status = 301
+    force = true
+
+# temporary redirect
+[[redirects]] 
+    from = "/*"
+    to = "/soon"
     status = 301
     force = true

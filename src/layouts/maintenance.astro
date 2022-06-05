@@ -7,8 +7,7 @@ import {
   ImageSupportDetection,
 } from 'astro-imagetools/components'
 
-const bgImage = 'https://source.unsplash.com/1920x1080/?tech'
-const title = 'Coming Soon'
+const { title, image } = Astro.props.content
 ---
 
 <html lang='id'>
@@ -20,7 +19,7 @@ const title = 'Coming Soon'
     <Icons />
   </head>
   <body>
-    <BackgroundImage src={bgImage}>
+    <BackgroundImage src={image}>
       <section class='maintenance__page'>
         <div class='wrapper'>
           <img src={logo} width={300} height='auto' alt={title} />
@@ -28,6 +27,7 @@ const title = 'Coming Soon'
         </div>
       </section>
     </BackgroundImage>
+    <script type='module' src='/pwabuilder-sw-register.js'></script>
   </body>
 </html>
 
