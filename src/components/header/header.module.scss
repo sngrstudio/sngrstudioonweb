@@ -1,9 +1,5 @@
 @use '../../styles/fonts';
 
-.menu {
-  @extend %icon;
-  @apply text-base-100;
-  &:after {
-    content: 'menu';
-  }
+.icon {
+    @extend %icon;
 }

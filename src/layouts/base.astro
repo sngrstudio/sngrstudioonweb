@@ -1,25 +1,23 @@
 ---
 import '@styles/global.scss'
-import Header from '@components/header/header.astro'
-import Icons from '@components/icons/icons.astro'
-import Footer from '@components/footer/footer.astro'
+import Head from '@components/head.astro'
+import Main from '@components/main.astro'
 
-const { title } = Astro.props
+export interface IBase {
+  title: string
+}
+
+const { title } = Astro.props as IBase
 ---
 
 <html lang='id'>
   <head>
-    <meta name='viewport' content='width=device-width' />
+    <Head />
     <title>{title}</title>
-    <Icons />
-    <meta charset='UTF-8' />
   </head>
   <body>
-    <Header />
-    <main>
+    <Main>
       <slot></slot>
-    </main>
-    <Footer />
-    <script type='module' src='/pwabuilder-sw-register.js'></script>
+    </Main>
   </body>
 </html>

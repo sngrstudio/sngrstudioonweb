@@ -1,0 +1,11 @@
+---
+import HeaderComp from './header'
+
+export interface IHeader {
+  menu: any
+}
+
+const { menu } = Astro.props as IHeader
+---
+
+<HeaderComp menu={menu} client:idle />
