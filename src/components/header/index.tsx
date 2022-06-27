@@ -10,7 +10,7 @@ const HeaderComp: FC<IHeaderComp> = ({ menu }) => {
   return (
     <div className="fixed top-0 inset-x-0 navbar">
       <div className="flex-none md:hidden">
-        <label htmlFor="main-drawer" className='btn btn-square btn-ghost mr-1'>
+        <label htmlFor="main-drawer" className="btn btn-square btn-ghost mr-1">
           <span className={style.icon}>menu</span>
         </label>
       </div>
