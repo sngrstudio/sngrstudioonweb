@@ -1,7 +1,7 @@
 .hero {
   @apply flex flex-col items-center justify-center;
   @apply bg-gradient-to-br from-primary to-secondary;
-  @apply min-h-[90vh] px-2;
+  @apply min-h-screen px-2;
 }
 
 .title {

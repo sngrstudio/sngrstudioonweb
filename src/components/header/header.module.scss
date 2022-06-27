@@ -1,5 +1,9 @@
 @use '../../styles/fonts';
 
+.nav {
+  @apply fixed top-0 inset-x-0 bg-base-100;
+}
+
 .icon {
   @extend %icon;
 }

@@ -32,6 +32,7 @@
     "tailwindcss": "^3.1.4"
   },
   "dependencies": {
-    "astro-imagetools": "^0.6.10"
+    "astro-imagetools": "^0.6.10",
+    "framer-motion": "^6.3.15"
   }
 }
