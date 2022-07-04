@@ -4,4 +4,4 @@ image:
 tasks:
   - name: initialization
     init: yarn
-    command: exit
+    command: ntl dev
