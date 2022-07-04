@@ -8,4 +8,4 @@ export interface IHeader {
 const { menu } = Astro.props as IHeader
 ---
 
-<HeaderComp menu={menu} client:idle />
+<HeaderComp menu={menu} client:load />

@@ -1,17 +1,21 @@
-import { FC, PropsWithChildren } from 'react'
-import { motion } from 'framer-motion'
+import { FC } from 'react'
 import style from './hero.module.scss'
 
-const HeroComp: FC<PropsWithChildren> = ({ children }) => {
+const content = {
+  headline: 'Persembahan yang terbaik, dari teknologi web modern.',
+  text: 'Kami mempersembahkan kepada anda produk layanan digital terbaik, dengan berfokus kepada kenyamanan costumer.',
+}
+
+const HeroComp: FC = () => {
   return (
     <div className={style.hero}>
-      <motion.div
-        initial={{ opacity: 0, y: 25 }}
-        animate={{ opacity: 1, y: 0 }}
-        className={style.title}
-      >
-        {children}
-      </motion.div>
+      <div className={style.title}>
+        <h2>{content.headline}</h2>
+        <p>{content.text}</p>
+        <div className={style.hero__contact}>
+          <a href="#contact">Kontak kami</a>
+        </div>
+      </div>
     </div>
   )
 }

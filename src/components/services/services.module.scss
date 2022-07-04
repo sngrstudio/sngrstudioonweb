@@ -1,0 +1,11 @@
+.service__section {
+  @apply max-w-screen-md mx-auto py-16 px-4;
+}
+
+.service__gallery {
+  @apply grid grid-cols-1 md:grid-cols-3 gap-4 text-base my-8;
+}
+
+.service__title {
+  @apply font-light text-4xl md:text-6xl text-center #{!important};
+}

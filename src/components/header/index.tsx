@@ -12,12 +12,12 @@ const HeaderComp: FC<IHeaderComp> = ({ menu }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollPos = window.scrollY
+      let currentScrollPos = window.scrollY
       setVisible(prevScrollPos > currentScrollPos)
       setPrevScrollPos(currentScrollPos)
     }
 
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', handleScroll, { passive: true })
     return () => {
       window.removeEventListener('scroll', handleScroll)
     }
